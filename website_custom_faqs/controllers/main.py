@@ -8,4 +8,4 @@ class StaticContent(http.Controller):
     @http.route(["/faqs"], type='http', auth="public", website=True)
     def faqs_page(self, **kwargs):
         faqs = request.env['faq'].sudo().search([('is_published', '=', True)])
-        return request.render('website_faq.faqs_template', {'faqs': faqs})
+        return request.render('website_custom_faqs.faqs_template', {'faqs': faqs})
